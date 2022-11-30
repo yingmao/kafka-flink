@@ -123,6 +123,7 @@ for(( i=2;i<=${#host_array[@]};i++)) ; do
     echo "rsync -r ${hadoop_home} ${host_array[i]}:$project_root_path/deps/"
     echo "yes" | rsync -r ${hadoop_home} ${host_array[i]}:$project_root_path/deps/
     rsync -r ${flink_home} ${host_array[i]}:$project_root_path/deps/
+    ssh ${host_array[i]} "rm -rf ${hadoop_home}/hadoop_file/hadoop/*"
     ssh ${host_array[i]} "source ${hadoop_home}/bashrc && ${hadoop_home}/sbin/hadoop-daemon.sh start datanode"
     ssh ${host_array[i]} "source ${hadoop_home}/bashrc && ${hadoop_home}/sbin/yarn-daemon.sh start nodemanager"
 done

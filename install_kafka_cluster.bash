@@ -100,8 +100,8 @@ find . -type f -print0 | xargs -0 sed -i "s/brokerID/1/g"
 echo 1 > ${kafka_home}/zookeeper-data/data/myid
 
 source ${kafka_home}/bashrc
-#${kafka_home}/bin/zookeeper-server-start.sh -daemon ${kafka_home}/config/zookeeper.properties
-#${kafka_home}/bin/kafka-server-start.sh -daemon ${kafka_home}/config/server.properties
+${kafka_home}/bin/zookeeper-server-start.sh -daemon ${kafka_home}/config/zookeeper.properties
+${kafka_home}/bin/kafka-server-start.sh -daemon ${kafka_home}/config/server.properties
 
 #${flume_home}/bin/flume-ng agent --conf conf/ -f conf/flume-conf.properties -n agent1 -Dflume.root.logger=DEBUG,console
 

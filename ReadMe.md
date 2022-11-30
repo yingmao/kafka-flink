@@ -1,35 +1,24 @@
-##
-args is cluster hostname, separate with a comma...
-`bash install_hadoop_cluster.bash host1,host2,host3`
-*The first one is master.*
 
-## yarn web ui is master_ip:7438
-## namenode web ui is master_ip:9870
-
-## flink
-nc -l 9002 # 运行flink example
+## Install Flink and Kafka on a 3-node Hadoop cluster
 
 
-## kafka test
-``` shell
-source ${KAFKA_HOME}/bashrc
-kafka-topics.sh --create --bootstrap-server 128.110.217.182:9092,128.110.217.164:9092,128.110.217.191:9092 --replication-factor 3 --partitions 1 --topic test
+- Make sure your manager node can `ssh` to the other 2 worker nodes
 
-kafka-topics.sh --list --bootstrap-server 128.110.217.182:9092,128.110.217.164:9092,128.110.217.191:9092
+### Switch to root and Download the source code
 
-kafka-console-producer.sh --broker-list 128.110.217.182:9092,128.110.217.164:9092,128.110.217.191:9092  --topic test
+- `su root`
+- `cd /`
+- `git clone https://github.com/yingmao/kafka-flink.git`
 
-kafka-console-consumer.sh --bootstrap-server 128.110.217.182:9092,128.110.217.164:9092,128.110.217.191:9092 --topic test --from-beginning
-```
+### Install the programming environment
 
-## flume
-log to kafka
-wget https://dlcdn.apache.org/flume/1.11.0/apache-flume-1.11.0-bin.tar.gz
-echo hello flume >> /tmp/flumetest.log
+- `cd /kafka-flink/`
+- `bash pre_install.bash`
 
-cd ${flume_home}
-bin/flume-ng agent --conf conf/ -f conf/flume-conf.properties -n agent1 -Dflume.root.logger=DEBUG,console
+### Install Kafka
 
-## Note:
-If you want install a cluster, Make sure the machines in the cluster can ssh each other.
-use `ssh-keygen -t rsa`
+- `bash install_kafka_cluster.bash manager-internal-ip,worker-1-internal-ip,worker-2-internal-ip`
+
+### Install Flink on Hadoop
+
+- `bash install_flink_on_hadoop_cluster.bash manager-internal-ip,worker-1-internal-ip,worker-2-internal-ip`
