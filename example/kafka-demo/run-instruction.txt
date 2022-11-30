@@ -1,0 +1,6 @@
+
+
+python3 producer.py manager_internal_ip:9092
+python3 consumer.py manager_internal_ip:9092
+
+
