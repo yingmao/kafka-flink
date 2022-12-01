@@ -54,6 +54,12 @@
 - When you stopped your instances and started them again, you will need to restart Flink/Kafka before executing any applications.
 - To restart the services, please run `restart_flink.bash` or `restart_kafka.bash`
 
+### Web-UI
+
+- If the Flink terminal is running without any errors but you cannot find the Web-UI, it should be the setting of Google cloud firewall.
+- Please follow the instructions to create a firewall rule and open the port numbers.
+- https://cloud.google.com/vpc/docs/using-firewalls
+
 ![](1.png)
 ![](2.png)
 ![](3.png)
