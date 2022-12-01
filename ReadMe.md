@@ -49,6 +49,11 @@
 - Replace the url with `Your-manager-external-ip`. For example, this is my url http://instance-1.c.stately-turbine-362222.internal:7438/proxy/application_1669781047618_0001/. This is the replaced url, http://34.127.105.242:7438/proxy/application_1669781047618_0001/. The IP 34.127.105.242 is my manager's external IP.
 - Now you will see the Flink Web-UI and you can check the results there. See image-2, image-3, and image-4
 
+### Restart the Flink and Kafka service
+
+- When you stopped your instances and started them again, you will need to restart Flink/Kafka before executing any applications.
+- To restart the services, please run `restart_flink.bash` or `restart_kafka.bash`
+
 ![](1.png)
 ![](2.png)
 ![](3.png)
