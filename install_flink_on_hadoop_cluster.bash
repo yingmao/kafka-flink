@@ -74,9 +74,9 @@ if [ ! -d "$flink_name" ]; then
 fi
 source ${flink_home}/bashrc
 
-#echo ===========================
-#echo Run Flink Example WordCount
-#echo ===========================
+echo ===========================
+echo Run Flink Example WordCount
+echo ===========================
 #hdfs namenode -format
 hadoop-daemon.sh stop namenode
 hadoop-daemon.sh stop datanode
