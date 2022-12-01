@@ -52,7 +52,7 @@
 ### Restart the Flink and Kafka service
 
 - When you stopped your instances and started them again, you will need to restart Flink/Kafka before executing any applications.
-- To restart the services, please run `restart_flink.bash` or `restart_kafka.bash`
+- To restart the services, please run `bash restart_flink.bash manager-internal-ip,worker-1-internal-ip,worker-2-internal-ip` or `bash restart_kafka.bash manager-internal-ip,worker-1-internal-ip,worker-2-internal-ip`
 
 ### Web-UI
 
