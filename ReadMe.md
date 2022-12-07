@@ -19,6 +19,12 @@
 
 - `bash install_kafka_cluster.bash manager-internal-ip,worker-1-internal-ip,worker-2-internal-ip`
 
+### ### Install Kafka with `Kraft`
+
+- If you choose the option 1, you will need to evluate your system with both Zookeeper (the previous installation) and Kraft (this section).
+- `bash install_kafka_with_kraft.bash manager-internal-ip,worker-1-internal-ip,worker-2-internal-ip`
+- To restart Kafka with Kraft, `bash restart_kafka_with_kraft.bash manager-internal-ip,worker-1-internal-ip,worker-2-internal-ip
+
 ### Install Flink on Hadoop
 
 - `bash install_flink_on_hadoop_cluster.bash manager-internal-ip,worker-1-internal-ip,worker-2-internal-ip`
