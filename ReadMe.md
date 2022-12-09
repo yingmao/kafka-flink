@@ -15,11 +15,11 @@
 - `cd /root/kafka-flink/`
 - `bash pre_install.bash manager-internal-ip,worker-1-internal-ip,worker-2-internal-ip`
 
-### Install Kafka
+### Install Kafka (with Zookeeper)
 
 - `bash install_kafka_cluster.bash manager-internal-ip,worker-1-internal-ip,worker-2-internal-ip`
 
-### ### Install Kafka with `Kraft`
+### Install Kafka with `Kraft`
 
 - If you choose the option 1, you will need to evluate your system with both Zookeeper (the previous installation) and Kraft (this section).
 - `bash install_kafka_with_kraft.bash manager-internal-ip,worker-1-internal-ip,worker-2-internal-ip`
