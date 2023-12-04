@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 
 mirrorServer=https://dist.apache.org/repos/dist/release
-kafkaVersion=2.8.2
-flumeVersion=1.11.0
+kafkaVersion=3.5.0
+flumeVersion=1.18.0
 
 cluster=$1
 eval $(echo $cluster | awk '{split($0, array, ",");for(i in array)print "host_array["i"]="array[i]}')
